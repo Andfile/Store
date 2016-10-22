@@ -13,20 +13,43 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.relative);
 
-        ((TextView) findViewById(R.id.txtText)).setText("hellow 2 world");
-        findViewById(R.id.txtText).setVisibility(View.GONE);
+      /*  ((TextView) findViewById(R.id.txtText)).setText("hellow 2 world");
+        findViewById(R.id.txtText).setVisibility(View.GONE);*/
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.fruit_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                action(v);
+                action1(v);
+            }
+        });
+
+        findViewById(R.id.milk_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                action2(v);
+            }
+        });
+
+        findViewById(R.id.ref_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((TextView) findViewById(R.id.noteTextView)).setText("");
+                action3(v);
             }
         });
     }
 
-    public void action(View v) {
-        ((TextView) findViewById(R.id.textView)).setText("Нажата кнопка");
+    public void action1(View v) {
+        ((TextView) findViewById(R.id.noteTextView)).setText("Fruit - Фрукты");
+    }
+
+    public void action2(View v) {
+        ((TextView) findViewById(R.id.textView)).setText("Milk - Молоко");
+    }
+
+    public void action3(View v) {
+        ((TextView) findViewById(R.id.textView)).setText("Refregirator - Холодильник");
     }
 }

@@ -13,32 +13,50 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="TO REF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:contentDescription="Refregirator" />
-
-    <Button
         android:text="To Fruit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:layout_marginBottom="96dp"
+        android:id="@+id/fruit_button"
+        android:layout_marginBottom="94dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="To Bye Press Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="116dp"
+        android:id="@+id/noteTextView" />
 
     <Button
         android:text="TO MILK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
+        android:id="@+id/milk_button"
+        android:layout_alignBaseline="@+id/fruit_button"
+        android:layout_alignBottom="@+id/fruit_button"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="TO REF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ref_button"
+        android:contentDescription="Refregirator"
+        android:layout_alignBaseline="@+id/milk_button"
+        android:layout_alignBottom="@+id/milk_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
