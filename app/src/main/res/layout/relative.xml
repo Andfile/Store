@@ -1,105 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:text="Wellcome to Our Store"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:text="To Bye Press Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:textStyle="normal|bold" />
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/storlogo" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/fruit_button"
-            android:text="To Fruit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"/>
+            android:onClick="onClick"
+            android:text="To Fruit" />
 
         <Button
             android:id="@+id/milk_button"
-            android:text="TO MILK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:text="TO MILK" />
 
         <Button
             android:id="@+id/ref_button"
-            android:text="TO REF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:contentDescription="Refregirator"
             android:onClick="onClick"
-            android:layout_weight="1" />
+            android:text="TO REF" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
 
-    <RelativeLayout
-        android:id="@+id/container"
+    <ImageView
+        android:id="@+id/firstScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_below="@+id/header"
+        android:src="@drawable/market"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollFruit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@android:color/black"
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_below="@+id/header"
+        android:fillViewport="true"
+
         >
 
-        <RelativeLayout
-            android:id="@+id/frutLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_dark"
-            android:gravity="center"
-            >
 
-            <TextView
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageButton
+                android:id="@+id/apple_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="установить в центр"
+                android:src="@drawable/apple_image_80"
+
+
                 />
 
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/milkLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@android:color/holo_blue_dark">
+            <ImageButton
+                android:id="@+id/banana"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/banana_80"
 
 
-        </RelativeLayout>
+                />
 
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/woterm"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/woterm"
+
+                />
+
+            <ImageButton
+                android:id="@+id/grusha"
+                android:layout_width="wrap_content"
+                android:layout_height="102dp"
+                android:src="@drawable/grusha_80" />
+
+            <ImageButton
+                android:id="@+id/granat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pomegranate_85" />
+
+        </TableLayout>
+
     </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollRef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_below="@+id/header"
+        android:fillViewport="true"
+
+
+        >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           >
+
+           <ImageButton
+           android:id="@+id/gorRed"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:src="@drawable/gorenje_retro_red"
+           />
+
+           <ImageButton
+               android:id="@+id/gorofwh"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/gor_retro_ofwhite"
+               />
+
+           <ImageButton
+               android:id="@+id/samsung"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/samsung"
+               />
+
+           <ImageButton
+               android:id="@+id/miele1"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/miele"
+               />
+           <ImageButton
+               android:id="@+id/miele2"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/miele2"
+               />
+
+           <ImageButton
+               android:id="@+id/coca"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/coca"
+               />
+
+           <ImageButton
+               android:id="@+id/hzhz"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:src="@drawable/hzche"
+               />
+
+
+       </LinearLayout>
+
+    </ScrollView>
+
 </RelativeLayout>
