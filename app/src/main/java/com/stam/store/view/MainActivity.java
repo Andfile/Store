@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void action2(View v) {
-        ((TextView) findViewById(R.id.textView)).setText("Milk - Молоко");
+        ((TextView) findViewById(R.id.noteTextView)).setText("Milk - Молоко");
     }
 
     public void action3(View v) {
-        ((TextView) findViewById(R.id.textView)).setText("Refregirator - Холодильник");
+        ((TextView) findViewById(R.id.noteTextView)).setText("Refregirator - Холодильник");
     }
 }
