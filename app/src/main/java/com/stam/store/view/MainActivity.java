@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void action(View v){
-
+    public void action(View v) {
+        ((TextView) findViewById(R.id.textView)).setText("Нажата кнопка");
     }
 }

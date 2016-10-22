@@ -6,6 +6,17 @@ package com.stam.store.model;
 
 public  class Refregirator implements IElectric {
 
+    private String manufactor;
+
+    public String getManufactor() {
+        return manufactor;
+    }
+
+
+    public void setManufactor(String manufactor) {
+        this.manufactor = manufactor;
+    }
+
     @Override
     public int getSupportedVoltage() {
         return 0;

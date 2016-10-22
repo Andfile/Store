@@ -7,6 +7,17 @@ import java.util.Date;
  */
 
 public class Milk implements IFood {
+
+    private int mFat;
+
+    public int getmFat() {
+        return mFat;
+    }
+
+    public void setmFat(int mFat) {
+        this.mFat = mFat;
+    }
+
     @Override
     public Date getExpDate() {
         return null;

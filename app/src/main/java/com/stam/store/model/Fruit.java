@@ -10,6 +10,9 @@ public class Fruit implements IFood {
 
     private int mID;
     private Date mDate;
+    private String mName;
+    private double mWeight;
+
 
     @Override
     public Date getExpDate() {
