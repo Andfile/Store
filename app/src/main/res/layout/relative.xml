@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:text="Wellcome to Our Store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
         android:textSize="24sp"
         android:textStyle="normal|bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="To Fruit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fruit_button"
-        android:layout_marginBottom="94dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <TextView
+        android:id="@+id/textView3"
         android:text="To Bye Press Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
         android:layout_marginTop="33dp"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:textStyle="normal|bold" />
 
     <TextView
+        android:id="@+id/noteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="116dp"
-        android:id="@+id/noteTextView" />
+        android:layout_marginTop="116dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true">
 
     <Button
+        android:id="@+id/fruit_button"
+        android:text="To Fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/milk_button"
         android:text="TO MILK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/milk_button"
-        android:layout_alignBaseline="@+id/fruit_button"
-        android:layout_alignBottom="@+id/fruit_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_weight="1"
+        android:onClick="onClick" />
 
     <Button
+        android:id="@+id/ref_button"
         android:text="TO REF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ref_button"
         android:contentDescription="Refregirator"
-        android:layout_alignBaseline="@+id/milk_button"
-        android:layout_alignBottom="@+id/milk_button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:onClick="onClick"
+        android:layout_weight="1" />
+    </LinearLayout>
 </RelativeLayout>

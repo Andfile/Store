@@ -8,48 +8,44 @@ import android.widget.TextView;
 
 import com.stam.store.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relative);
 
-      /*  ((TextView) findViewById(R.id.txtText)).setText("hellow 2 world");
-        findViewById(R.id.txtText).setVisibility(View.GONE);*/
-
-        findViewById(R.id.fruit_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                action1(v);
-            }
-        });
-
-        findViewById(R.id.milk_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                action2(v);
-            }
-        });
-
-        findViewById(R.id.ref_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((TextView) findViewById(R.id.noteTextView)).setText("");
-                action3(v);
-            }
-        });
+//        ((TextView) findViewById(R.id.txtText)).setText("hellow 2 world");
+//        findViewById(R.id.txtText).setVisibility(View.GONE);
     }
 
-    public void action1(View v) {
+    public void action1() {
         ((TextView) findViewById(R.id.noteTextView)).setText("Fruit - Фрукты");
     }
 
-    public void action2(View v) {
+    public void action2() {
         ((TextView) findViewById(R.id.noteTextView)).setText("Milk - Молоко");
     }
 
-    public void action3(View v) {
+    public void action3() {
         ((TextView) findViewById(R.id.noteTextView)).setText("Refregirator - Холодильник");
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.fruit_button:
+                action1();
+                break;
+
+            case R.id.milk_button:
+                action2();
+                break;
+
+            case R.id.ref_button:
+                action3();
+                break;
+        }
     }
 }
