@@ -38,8 +38,7 @@ public class SpalshActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                try {
-                    Thread.sleep(2000);
+
 
                     Intent intent = new Intent(SpalshActivity.this, MainActivity.class);
                     intent.putExtra("extraInfoKey", "hochu stejk");
@@ -47,9 +46,7 @@ public class SpalshActivity extends AppCompatActivity {
 
                     finish();
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
         }, 2000);
     }

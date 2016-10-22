@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relative);
 
-//        ((TextView) findViewById(R.id.txtText)).setText("hellow 2 world");
-//        findViewById(R.id.txtText).setVisibility(View.GONE);
     }
 
     public void action1() {
