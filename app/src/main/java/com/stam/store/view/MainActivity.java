@@ -20,15 +20,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void action1() {
-        ((TextView) findViewById(R.id.noteTextView)).setText("Fruit - Фрукты");
+        //((TextView) findViewById(R.id.noteTextView)).setText("Fruit - Фрукты");
     }
 
     public void action2() {
-        ((TextView) findViewById(R.id.noteTextView)).setText("Milk - Молоко");
+        //((TextView) findViewById(R.id.noteTextView)).setText("Milk - Молоко");
     }
 
     public void action3() {
-        ((TextView) findViewById(R.id.noteTextView)).setText("Refregirator - Холодильник");
+        //((TextView) findViewById(R.id.noteTextView)).setText("Refregirator - Холодильник");
     }
 
     @Override

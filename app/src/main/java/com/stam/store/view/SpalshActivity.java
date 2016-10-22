@@ -9,6 +9,8 @@ import com.stam.store.R;
 
 public class SpalshActivity extends AppCompatActivity {
 
+    private Handler mHandler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class SpalshActivity extends AppCompatActivity {
 //            }
 //        }).start();
 
-        new Handler().postDelayed(new Runnable() {
+        mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
 

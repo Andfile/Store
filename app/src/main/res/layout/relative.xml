@@ -25,44 +25,78 @@
         android:layout_centerHorizontal="true"
         android:textStyle="normal|bold" />
 
-    <TextView
-        android:id="@+id/noteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="116dp"/>
+        android:layout_above="@+id/buttonsLayout">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        >
+
+        <RelativeLayout
+            android:id="@+id/frutLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_red_dark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="adslfkgfhlkiasdfgkljasdjklfh"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/milkLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_blue_dark">
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </ScrollView>
 
     <LinearLayout
+        android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="10dp"
         android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/fruit_button"
-        android:text="To Fruit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="onClick"/>
+        <Button
+            android:id="@+id/fruit_button"
+            android:text="To Fruit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"/>
 
-    <Button
-        android:id="@+id/milk_button"
-        android:text="TO MILK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="onClick" />
+        <Button
+            android:id="@+id/milk_button"
+            android:text="TO MILK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick" />
 
-    <Button
-        android:id="@+id/ref_button"
-        android:text="TO REF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Refregirator"
-        android:onClick="onClick"
-        android:layout_weight="1" />
+        <Button
+            android:id="@+id/ref_button"
+            android:text="TO REF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Refregirator"
+            android:onClick="onClick"
+            android:layout_weight="1" />
     </LinearLayout>
 </RelativeLayout>
