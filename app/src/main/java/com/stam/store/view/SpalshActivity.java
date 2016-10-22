@@ -16,6 +16,8 @@ public class SpalshActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spalsh);
 
+
+// пример с тредом который сделал я,но вито сказал что лучше нижний вариант.
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -34,18 +36,15 @@ public class SpalshActivity extends AppCompatActivity {
 //            }
 //        }).start();
 
+
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
 
-
-
                     Intent intent = new Intent(SpalshActivity.this, MainActivity.class);
-                    intent.putExtra("extraInfoKey", "hochu stejk");
                     startActivity(intent);
 
                     finish();
-
 
             }
         }, 2000);
