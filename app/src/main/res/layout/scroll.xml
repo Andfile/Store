@@ -5,26 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Wellcome to Our Store"
-        android:textSize="24sp"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:text="To Bye Press Button"
-        android:textStyle="normal|bold" />
-
     <LinearLayout
         android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
@@ -59,78 +39,127 @@
             android:text="TO REF" />
     </LinearLayout>
 
-    <ScrollView
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/storlogo" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fruit_addToCart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true">
+        android:layout_below="@+id/header"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <RelativeLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
+
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/cart"
+
+            />
+
+        <TextView
+            android:id="@+id/juhjhk"
+            android:text="PRICE"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@android:color/black">
+            android:textSize="36sp"
+            android:layout_marginBottom="27dp"
+            android:textStyle="normal|bold"
+            android:layout_alignBottom="@+id/productImage"
+            android:layout_toRightOf="@+id/productImage"
+            android:layout_toEndOf="@+id/productImage"
+            android:layout_marginLeft="77dp"
+            android:layout_marginStart="77dp" />
 
-            <RelativeLayout
-                android:id="@+id/milkLayout"
+        <TextView
+            android:id="@+id/textViewShekelIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₪"
+            android:textSize="24sp"
+            android:layout_alignBottom="@+id/textViewPrice"
+            android:layout_toRightOf="@+id/textViewPrice"
+            android:layout_toEndOf="@+id/textViewPrice"
+            android:layout_marginLeft="29dp"
+            android:layout_marginStart="29dp" />
+
+        <LinearLayout
+            android:id="@+id/properties"
+            android:orientation="vertical"
+            android:layout_below="@+id/productImage"
+            android:layout_above="@+id/buttonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+
+          >
+
+            <TextView
+                android:id="@+id/textViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:background="@android:color/holo_blue_dark">
+                android:textSize="36sp"
+                android:text="Name"
+                android:layout_margin="15dp"
+                android:textAlignment="center" />
 
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/frutLayout"
+            <TextView
+                android:id="@+id/textViewCountry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/holo_red_dark"
-                android:gravity="center"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:textSize="36sp"
+                android:text="COUNTRY"
+                android:layout_margin="15dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:text="Chose weight"
+                android:textAlignment="center"
+                android:id="@+id/EditBoxWeight"
+                android:inputType="numberDecimal"
+                android:textStyle="normal|bold"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to Card"
+                android:layout_margin="15dp"
+                />
+
+        </LinearLayout>
 
 
-                <ImageButton
-                    android:id="@+id/apple_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/apple_image_80"
+    </RelativeLayout>
 
-
-
-
-                    />
-
-
-                <ImageButton
-                    android:id="@+id/banana"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/banana_80"
-
-
-                    />
-
-                <ImageButton
-                    android:id="@+id/woterm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/woterm"
-
-                    />
-
-                <ImageButton
-                    android:id="@+id/pinApple"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/grape_80"
-                    />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-    </ScrollView>
 </RelativeLayout>

@@ -1,7 +1,7 @@
 package com.stam.store.model;
 
 /**
- * Created by Vito on 10/14/2016.
+ * Created by Andfile on 10/14/2016.
  */
 
 public interface IElectric extends IProduct {

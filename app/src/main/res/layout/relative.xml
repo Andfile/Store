@@ -6,28 +6,6 @@
     tools:context=".view.MainActivity">
 
     <LinearLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
-
-        <ImageView
-            android:id="@+id/cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cart" />
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:src="@drawable/storlogo" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,8 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonsLayout"
         android:layout_below="@+id/header"
-        android:src="@drawable/market"
-        />
+        android:src="@drawable/market" />
 
     <ScrollView
         android:id="@+id/scrollFruit"
@@ -90,7 +67,8 @@
             <ImageButton
                 android:id="@+id/apple_img"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
+                android:onClick="onClick"
                 android:src="@drawable/apple_image_80"
 
 
@@ -98,33 +76,44 @@
 
 
             <ImageButton
-                android:id="@+id/banana"
+                android:id="@+id/banana_img"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:src="@drawable/banana_80"
-
-
+                android:onClick="onClick"
                 />
 
             <ImageButton
-                android:id="@+id/woterm"
+                android:id="@+id/woterm_img"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:src="@drawable/woterm"
-
+                android:onClick="onClick"
                 />
 
             <ImageButton
-                android:id="@+id/grusha"
+                android:id="@+id/grusha_img"
                 android:layout_width="wrap_content"
-                android:layout_height="102dp"
-                android:src="@drawable/grusha_80" />
+                android:layout_height="100dp"
+                android:src="@drawable/grusha_80"
+                android:onClick="onClick"
+                />
 
             <ImageButton
-                android:id="@+id/granat"
+                android:id="@+id/granat_img"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/pomegranate_85" />
+                android:layout_height="100dp"
+                android:src="@drawable/pomegranate_85"
+                android:onClick="onClick"
+                />
+
+            <ImageButton
+                android:id="@+id/grape_img"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/grape_80"
+                android:onClick="onClick"
+                />
 
         </TableLayout>
 
@@ -140,63 +129,215 @@
 
 
         >
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           >
 
-           <ImageButton
-           android:id="@+id/gorRed"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:src="@drawable/gorenje_retro_red"
-           />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-           <ImageButton
-               android:id="@+id/gorofwh"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/gor_retro_ofwhite"
-               />
+            <ImageButton
+                android:id="@+id/gorRed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/gorenje_retro_red" />
 
-           <ImageButton
-               android:id="@+id/samsung"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/samsung"
-               />
+            <ImageButton
+                android:id="@+id/gorofwh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/gor_retro_ofwhite" />
 
-           <ImageButton
-               android:id="@+id/miele1"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/miele"
-               />
-           <ImageButton
-               android:id="@+id/miele2"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/miele2"
-               />
+            <ImageButton
+                android:id="@+id/samsung"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/samsung" />
 
-           <ImageButton
-               android:id="@+id/coca"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/coca"
-               />
+            <ImageButton
+                android:id="@+id/miele1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/miele" />
 
-           <ImageButton
-               android:id="@+id/hzhz"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:src="@drawable/hzche"
-               />
+            <ImageButton
+                android:id="@+id/miele2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/miele2" />
+
+            <ImageButton
+                android:id="@+id/coca"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/coca" />
+
+            <ImageButton
+                android:id="@+id/hzhz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/hzche" />
 
 
-       </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollmilk"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_below="@+id/header"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/amid_milk"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/milk_amid"
+
+                />
+
+            <ImageButton
+                android:id="@+id/tara"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/tara80"
+
+                />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/storlogo" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fruit_addToCart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/cart"
+
+            />
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:text="PRICE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            android:layout_marginBottom="27dp"
+            android:textStyle="normal|bold"
+            android:layout_alignBottom="@+id/productImage"
+            android:layout_toRightOf="@+id/productImage"
+            android:layout_toEndOf="@+id/productImage"
+            android:layout_marginLeft="77dp"
+            android:layout_marginStart="77dp" />
+
+        <TextView
+            android:id="@+id/textViewShekelIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₪"
+            android:textSize="24sp"
+            android:layout_alignBottom="@+id/textViewPrice"
+            android:layout_toRightOf="@+id/textViewPrice"
+            android:layout_toEndOf="@+id/textViewPrice"
+            android:layout_marginLeft="29dp"
+            android:layout_marginStart="29dp" />
+
+        <LinearLayout
+            android:id="@+id/properties"
+            android:orientation="vertical"
+            android:layout_below="@+id/productImage"
+            android:layout_above="@+id/buttonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+
+            >
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:text="Name"
+                android:layout_margin="15dp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textViewCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:text="COUNTRY"
+                android:layout_margin="15dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:textAlignment="center"
+                android:id="@+id/EditBoxWeight"
+                android:inputType="numberDecimal"
+                android:textStyle="normal|bold"
+                android:hint="Enter Weight"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to Card"
+                android:layout_margin="15dp"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>
