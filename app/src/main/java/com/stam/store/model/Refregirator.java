@@ -1,5 +1,7 @@
 package com.stam.store.model;
 
+import com.stam.store.model.interfaces.IElectric;
+
 /**
  * Created by Andfile on 10/14/2016.
  */

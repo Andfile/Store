@@ -49,172 +49,20 @@
         android:src="@drawable/market" />
 
     <ScrollView
-        android:id="@+id/scrollFruit"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonsLayout"
         android:layout_below="@+id/header"
         android:fillViewport="true"
-
         >
 
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <ImageButton
-                android:id="@+id/apple_img"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:onClick="onClick"
-                android:src="@drawable/apple_image_80"
-
-
-                />
-
-
-            <ImageButton
-                android:id="@+id/banana_img"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/banana_80"
-                android:onClick="onClick"
-                />
-
-            <ImageButton
-                android:id="@+id/woterm_img"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/woterm"
-                android:onClick="onClick"
-                />
-
-            <ImageButton
-                android:id="@+id/grusha_img"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/grusha_80"
-                android:onClick="onClick"
-                />
-
-            <ImageButton
-                android:id="@+id/granat_img"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/pomegranate_85"
-                android:onClick="onClick"
-                />
-
-            <ImageButton
-                android:id="@+id/grape_img"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/grape_80"
-                android:onClick="onClick"
-                />
-
-        </TableLayout>
+        <!--<include android:id="@+id/scrollFruit" layout="@layout/fruits_layout"/>-->
+        <!--<include android:id="@+id/scrollRef" layout="@layout/refrigerators_layout"/>-->
+        <!--<include android:id="@+id/scrollmilk" layout="@layout/milk_layout"/>-->
 
     </ScrollView>
 
-    <ScrollView
-        android:id="@+id/scrollRef"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonsLayout"
-        android:layout_below="@+id/header"
-        android:fillViewport="true"
-
-
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/gorRed"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/gorenje_retro_red" />
-
-            <ImageButton
-                android:id="@+id/gorofwh"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/gor_retro_ofwhite" />
-
-            <ImageButton
-                android:id="@+id/samsung"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/samsung" />
-
-            <ImageButton
-                android:id="@+id/miele1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/miele" />
-
-            <ImageButton
-                android:id="@+id/miele2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/miele2" />
-
-            <ImageButton
-                android:id="@+id/coca"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/coca" />
-
-            <ImageButton
-                android:id="@+id/hzhz"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/hzche" />
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/scrollmilk"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/buttonsLayout"
-        android:layout_below="@+id/header"
-        android:fillViewport="true">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/amid_milk"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:src="@drawable/milk_amid"
-
-                />
-
-            <ImageButton
-                android:id="@+id/tara"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:src="@drawable/tara80"
-
-                />
-        </LinearLayout>
-
-
-    </ScrollView>
 
     <LinearLayout
         android:id="@+id/header"
@@ -247,8 +95,6 @@
         android:layout_below="@+id/header"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-
-
 
         <ImageView
             android:id="@+id/productImage"

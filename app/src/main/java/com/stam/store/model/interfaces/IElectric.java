@@ -1,4 +1,4 @@
-package com.stam.store.model;
+package com.stam.store.model.interfaces;
 
 /**
  * Created by Andfile on 10/14/2016.

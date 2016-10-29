@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/scrollRef"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/gorRed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/gorenje_retro_red" />
+
+    <ImageButton
+        android:id="@+id/gorofwh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/gor_retro_ofwhite" />
+
+    <ImageButton
+        android:id="@+id/samsung"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/samsung" />
+
+    <ImageButton
+        android:id="@+id/miele1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/miele" />
+
+    <ImageButton
+        android:id="@+id/miele2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/miele2" />
+
+    <ImageButton
+        android:id="@+id/coca"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/coca" />
+
+    <ImageButton
+        android:id="@+id/hzhz"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/hzche" />
+
+</LinearLayout>

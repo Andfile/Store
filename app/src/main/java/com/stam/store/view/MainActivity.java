@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.stam.store.R;
 import com.stam.store.model.Fruit;
-import com.stam.store.model.IProduct;
+import com.stam.store.model.interfaces.IProduct;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -18,17 +20,19 @@ import java.util.Hashtable;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
    public Dictionary dict = new Hashtable();
    public ArrayList<IProduct> cart = new ArrayList<>();
+    ScrollView container;
+    LinearLayout shopList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.relative);
+        setContentView(R.layout.activity_store_main);
         initStore();
-        findViewById(R.id.scrollFruit).setVisibility(View.GONE);
-        findViewById(R.id.scrollRef).setVisibility(View.GONE);
-        findViewById(R.id.firstScreen).setVisibility(View.VISIBLE);
-        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
-        findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
+        container = (ScrollView) findViewById(R.id.container);
 
+//        findViewById(R.id.scrollRef).setVisibility(View.GONE);
+//        findViewById(R.id.firstScreen).setVisibility(View.VISIBLE);
+//        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
+       findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
 
     }
 
@@ -39,20 +43,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public void actionAddProduct(IProduct product) {
+        if(shopList == null){
+            shopList = new LinearLayout(this);
+        }
+        View newItem = getLayoutInflater().inflate(R.layout.list_item_layout, null, false);
+        shopList.addView(newItem);
+    }
+
+    public void actionSwitch(int newLayoutId) {
+        container.removeAllViews();
+        View newLayout = getLayoutInflater().inflate(newLayoutId, container, true);
+    }
+
     public void actionFruit() {
-        findViewById(R.id.scrollFruit).setVisibility(View.VISIBLE);
-        findViewById(R.id.scrollRef).setVisibility(View.GONE);
-        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
-        findViewById(R.id.firstScreen).setVisibility(View.GONE);
-        findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
+        actionSwitch(R.layout.fruits_layout);
+
+//        findViewById(R.id.scrollFruit).setVisibility(View.VISIBLE);
+//        findViewById(R.id.scrollRef).setVisibility(View.GONE);
+//        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
+//        findViewById(R.id.firstScreen).setVisibility(View.GONE);
+//        findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
     }
 
     public void actionMilk() {
-        findViewById(R.id.scrollRef).setVisibility(View.GONE);
-        findViewById(R.id.scrollFruit).setVisibility(View.GONE);
-        findViewById(R.id.scrollmilk).setVisibility(View.VISIBLE);
-        findViewById(R.id.firstScreen).setVisibility(View.GONE);
-        findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
+
+        actionSwitch(R.layout.milk_layout);
+
+//        findViewById(R.id.scrollRef).setVisibility(View.GONE);
+//        findViewById(R.id.scrollFruit).setVisibility(View.GONE);
+//        findViewById(R.id.scrollmilk).setVisibility(View.VISIBLE);
+//        findViewById(R.id.firstScreen).setVisibility(View.GONE);
+//        findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
     }
 
     public void actionRef() {

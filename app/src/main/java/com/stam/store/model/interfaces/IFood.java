@@ -1,4 +1,4 @@
-package com.stam.store.model;
+package com.stam.store.model.interfaces;
 
 import java.util.Date;
 

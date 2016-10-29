@@ -1,5 +1,7 @@
 package com.stam.store.model;
 
+import com.stam.store.model.interfaces.IFood;
+
 import java.util.Date;
 
 public class Fruit implements IFood {
