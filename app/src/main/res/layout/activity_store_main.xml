@@ -162,11 +162,11 @@
                 android:textAlignment="center" />
 
             <EditText
+                android:id="@+id/editBoxWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="36sp"
                 android:textAlignment="center"
-                android:id="@+id/EditBoxWeight"
                 android:inputType="numberDecimal"
                 android:textStyle="normal|bold"
                 android:hint="Enter Weight"

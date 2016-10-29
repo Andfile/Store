@@ -145,7 +145,7 @@
                 android:textSize="36sp"
                 android:text="Chose weight"
                 android:textAlignment="center"
-                android:id="@+id/EditBoxWeight"
+                android:id="@+id/editBoxWeight"
                 android:inputType="numberDecimal"
                 android:textStyle="normal|bold"
                 />
