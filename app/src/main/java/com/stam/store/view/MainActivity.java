@@ -18,10 +18,11 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-   public Dictionary dict = new Hashtable();
-   public ArrayList<IProduct> cart = new ArrayList<>();
+    public Dictionary dict = new Hashtable();
+    public ArrayList<IProduct> cart = new ArrayList<>();
     ScrollView container;
     LinearLayout shopList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +33,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        findViewById(R.id.scrollRef).setVisibility(View.GONE);
 //        findViewById(R.id.firstScreen).setVisibility(View.VISIBLE);
 //        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
-       findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
+//        findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
 
     }
 
-    public void actionAddToCart(){
-
-
+    public void actionAddToCart() {
 
 
     }
 
     public void actionAddProduct(IProduct product) {
-        if(shopList == null){
+        if (shopList == null) {
             shopList = new LinearLayout(this);
         }
         View newItem = getLayoutInflater().inflate(R.layout.list_item_layout, null, false);
@@ -53,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void actionSwitch(int newLayoutId) {
         container.removeAllViews();
-        View newLayout = getLayoutInflater().inflate(newLayoutId, container, true);
+//        View newLayout =
+        getLayoutInflater().inflate(newLayoutId, container, true);
     }
 
     public void actionFruit() {
@@ -100,12 +100,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
     }
 
+    // Аптимизировать работу с лейаутами, и почистить код
+    // попробывать вынести во внешнюю функцию вытягивание инфы из арея
     public void actionApple() {
-        findViewById(R.id.fruit_addToCart).setVisibility(View.VISIBLE);
-        findViewById(R.id.scrollFruit).setVisibility(View.GONE);
-        findViewById(R.id.scrollRef).setVisibility(View.GONE);
-        findViewById(R.id.firstScreen).setVisibility(View.GONE);
-        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
+
+        actionSwitch(R.layout.add_to_cart_layout);
+
         Resources res = getResources();
         ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.apple_image_80));
         Fruit fruit1 = new Fruit();
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
     }
 
-    public void actionWaterMelon(){
+    public void actionWaterMelon() {
         findViewById(R.id.fruit_addToCart).setVisibility(View.VISIBLE);
         findViewById(R.id.scrollFruit).setVisibility(View.GONE);
         findViewById(R.id.scrollRef).setVisibility(View.GONE);
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
     }
 
-    public void actionGrusha(){
+    public void actionGrusha() {
         findViewById(R.id.fruit_addToCart).setVisibility(View.VISIBLE);
         findViewById(R.id.scrollFruit).setVisibility(View.GONE);
         findViewById(R.id.scrollRef).setVisibility(View.GONE);
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void initStore(){
+    public void initStore() {
 
         dict.put("Apple", new Fruit("Apple", 0.0, 12.5));
         dict.put("Banana", new Fruit("Banana", 0.0, 14.5));
@@ -188,7 +188,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dict.put("Grape", new Fruit("Grape", 0.0, 4.5));
 
     }
+/*
+    @Override
+    public void onBackPressed() {
 
+
+        super.onBackPressed();
+    }*/
 
     @Override
     public void onClick(View v) {
