@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_dark">
 
     <ImageView
         android:id="@+id/icon"
@@ -10,26 +12,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/banana_80"/>
+        android:src="@drawable/banana_80" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/icon"
-        android:layout_toLeftOf="@+id/delete"
-        android:maxLines="2"
-        android:text="asdgf  asdgsdf  afdg"
         android:layout_centerVertical="true"
-        />
+        android:layout_toLeftOf="@+id/delete"
+        android:layout_toRightOf="@+id/icon"
+        android:maxLines="2"
+        android:text="asdgf  asdgsdf  afdg" />
 
     <ImageButton
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_delete"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_delete" />
 
 
 </RelativeLayout>
