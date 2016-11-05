@@ -3,13 +3,11 @@ package com.stam.store.view;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -19,17 +17,16 @@ import com.stam.store.R;
 import com.stam.store.model.Fruit;
 import com.stam.store.model.interfaces.IProduct;
 
-import org.xmlpull.v1.XmlPullParser;
-
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public Dictionary dict = new Hashtable();
-    public ArrayList<Fruit> cart = new ArrayList<>();
+    public ArrayList<IProduct> cart = new ArrayList<>();
     ScrollView container;
     LinearLayout shopList;
+    IProduct mCurrentProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,29 +35,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initStore();
         container = (ScrollView) findViewById(R.id.container);
 
-//        findViewById(R.id.scrollRef).setVisibility(View.GONE);
-//        findViewById(R.id.firstScreen).setVisibility(View.VISIBLE);
-//        findViewById(R.id.scrollmilk).setVisibility(View.GONE);
-        //  findViewById(R.id.fruit_addToCart).setVisibility(View.GONE);
-
     }
+
 
     public void actionAddToCart() {
 
-        String key1;
-        Log.e("ADD----------------","prepare textViewTo Key1");
-        key1 = findViewById(R.id.textViewName).toString();
-        Log.e("ADD----------------","add textViewTo Key1");
-        cart.add((Fruit) dict.get(key1));
-        Log.e("ADD----------------",""+cart.size());
+        cart.add(mCurrentProduct);
+        Log.e("ADD----SIZE OF LIST----", "" + cart.size());
         actionFruit();
     }
 
-    public void listCartProduct (){
+    public void listCartProduct() {
         container.removeAllViews();
-        Log.e("LIST-------------","start");
-        for (Fruit a : cart){
-            Log.e("",a.getName());
+
+        if (shopList != null) {shopList.removeAllViews();}
+        Log.e("LIST-------------", "start");
+
+        for (IProduct a : cart) {
+            Log.e("", a.getName());
             actionAddProduct(a);
 
         }
@@ -69,14 +61,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void actionAddProduct(Fruit product) {
+    public void actionAddProduct(IProduct product) {
         if (shopList == null) {
             shopList = new LinearLayout(this);
             shopList.setOrientation(LinearLayout.VERTICAL);
-            LinearLayout.LayoutParams paramsShopList = new  LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams paramsShopList = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
             shopList.setLayoutParams(paramsShopList);
         }
+
         View newItem = getLayoutInflater().inflate(R.layout.list_item_layout, null, false);
         shopList.addView(newItem);
 
@@ -101,85 +94,102 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         actionSwitch(R.layout.refrigerators_layout);
     }
 
-    public void actionBanana() {
-        actionSwitch(R.layout.add_fruits_layout);
+
+    private void fillProductDitales(IProduct mCurrentProduct) {
         Resources res = getResources();
-        ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.banana_80));
-        Fruit fruit1 = new Fruit();
-        fruit1 = (Fruit) dict.get("Banana");
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(fruit1.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(fruit1.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
+        switch (mCurrentProduct.getName()) {
+
+            case "Apple":
+                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.apple_image_80));
+                break;
+            case "WaterMelon":
+                    ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.woterm));
+                break;
+            case "Banana" :
+                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.banana_80));
+                break;
+            case "Grusha":
+                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.grusha_80));
+                break;
+            case "Granat" :
+                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.pomegranate_85));
+                break;
+            case "Grape":
+                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.grape_80));
+                break;
+        }
+
+        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(mCurrentProduct.getPrice()));
+        ((TextView) findViewById(R.id.textViewCountry)).setText(mCurrentProduct.getCountry());
+        ((TextView) findViewById(R.id.textViewName)).setText(mCurrentProduct.getName());
     }
 
-    public void actionApple() {
-        Log.e("ADD----------------","Apple test");
+    public void actionBanana() {
+        Log.e("ADD----------------", "Banana test");
         actionSwitch(R.layout.add_fruits_layout);
-        Resources res = getResources();
-        ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.apple_image_80));
-        Fruit fruit1 = new Fruit();
-        fruit1 = (Fruit) dict.get("Apple");
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(fruit1.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(fruit1.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
 
+        mCurrentProduct = (Fruit) dict.get("Banana");
+
+        fillProductDitales(mCurrentProduct);
     }
 
     public void actionWaterMelon() {
+        Log.e("ADD----------------", "WaterMelon test");
         actionSwitch(R.layout.add_fruits_layout);
-        Resources res = getResources();
-        ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.woterm));
-        Fruit fruit1 = new Fruit();
-        fruit1 = (Fruit) dict.get("WaterMelon");
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(fruit1.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(fruit1.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
+
+        mCurrentProduct = (Fruit) dict.get("WaterMelon");
+
+        fillProductDitales(mCurrentProduct);
+    }
+
+    public void actionApple() {
+        Log.e("ADD----------------", "Apple test");
+        actionSwitch(R.layout.add_fruits_layout);
+
+        mCurrentProduct = (Fruit) dict.get("Apple");
+
+        fillProductDitales(mCurrentProduct);
     }
 
     public void actionGrusha() {
+        Log.e("ADD----------------", "Grusha test");
         actionSwitch(R.layout.add_fruits_layout);
-        Resources res = getResources();
-        ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.grusha_80));
-        Fruit fruit1 = new Fruit();
-        fruit1 = (Fruit) dict.get("Grusha");
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(fruit1.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(fruit1.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
 
+        mCurrentProduct = (Fruit) dict.get("Grusha");
+
+        fillProductDitales(mCurrentProduct);
     }
+
+
 
     public void actionGranat() {
-        Resources res = getResources();
+        Log.e("ADD----------------", "Granat test");
         actionSwitch(R.layout.add_fruits_layout);
-        Fruit fruit1 = new Fruit();
-        ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.pomegranate_85));
-        fruit1 = (Fruit) dict.get("Granat");
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(fruit1.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(fruit1.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
+
+        mCurrentProduct = (Fruit) dict.get("Granat");
+
+        fillProductDitales(mCurrentProduct);
     }
+
 
     public void actionGrape() {
-        actionSwitch(R.layout.add_fruits_layout);
-        Resources res = getResources();
-        Fruit fruit1 = new Fruit();
-        ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.grape_80));
-        fruit1 = (Fruit) dict.get("Grape");
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(fruit1.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(fruit1.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(fruit1.getName());
+            Log.e("ADD----------------", "Grape test");
+            actionSwitch(R.layout.add_fruits_layout);
 
+            mCurrentProduct = (Fruit) dict.get("Grape");
 
-    }
+            fillProductDitales(mCurrentProduct);
+        }
+
 
     public void initStore() {
 
-        dict.put("Apple", new Fruit("Apple", 0.0, 12.5));
-        dict.put("Banana", new Fruit("Banana", 0.0, 14.5));
-        dict.put("WaterMelon", new Fruit("WaterMelon", 0.0, 4.5));
-        dict.put("Grusha", new Fruit("Grusha", 0.0, 11.90));
-        dict.put("Granat", new Fruit("Granat", 0.0, 20.5));
-        dict.put("Grape", new Fruit("Grape", 0.0, 4.5));
+        dict.put("Apple", new Fruit("Apple", 1.0, 12.5));
+        dict.put("Banana", new Fruit("Banana", 2.0, 14.5));
+        dict.put("WaterMelon", new Fruit("WaterMelon", 3.0, 4.5));
+        dict.put("Grusha", new Fruit("Grusha", 4.0, 11.90));
+        dict.put("Granat", new Fruit("Granat", 5.0, 20.5));
+        dict.put("Grape", new Fruit("Grape", 6.0, 4.5));
 
     }
 
