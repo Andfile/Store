@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     public void actionAddToCart() {
 
         cart.add(mCurrentProduct);
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     public void actionSwitch(int newLayoutId) {
         container.removeAllViews();
         getLayoutInflater().inflate(newLayoutId, container, true);
@@ -93,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void actionRef() {
         actionSwitch(R.layout.refrigerators_layout);
     }
-
 
     private void fillProductDitales(IProduct mCurrentProduct) {
         Resources res = getResources();
@@ -160,8 +157,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fillProductDitales(mCurrentProduct);
     }
 
-
-
     public void actionGranat() {
         Log.e("ADD----------------", "Granat test");
         actionSwitch(R.layout.add_fruits_layout);
@@ -171,7 +166,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fillProductDitales(mCurrentProduct);
     }
 
-
     public void actionGrape() {
             Log.e("ADD----------------", "Grape test");
             actionSwitch(R.layout.add_fruits_layout);
@@ -180,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             fillProductDitales(mCurrentProduct);
         }
-
 
     public void initStore() {
 
