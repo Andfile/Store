@@ -19,8 +19,8 @@ public class Fruit implements IFood {
         this.mName = mName;
         this.mCountry = "Israel";
         this.mWeight = mWeight;
-        this.mPrice = mPrice;
-    }
+    this.mPrice = mPrice;
+}
 
 
 

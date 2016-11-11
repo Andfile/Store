@@ -1,6 +1,9 @@
 package com.stam.store.view;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +19,7 @@ import android.widget.TextView;
 import com.stam.store.R;
 import com.stam.store.model.Fruit;
 import com.stam.store.model.interfaces.IProduct;
+import com.stam.store.view.Fragments.FruitFragment;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -27,6 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ScrollView container;
     LinearLayout shopList;
     IProduct mCurrentProduct;
+    Fragment mNewFragment ;
+
+    FragmentManager fragmentManager = getFragmentManager();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +92,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void actionFruit() {
-        actionSwitch(R.layout.fruits_layout);
+
+       // actionSwitch(R.layout.fruits_layout);
+
+        //для того чтоб вызвать фрагмент нам нужно использовать фрагмнет транзикуию
+        //каждое изменение фрагмента(ремув,адд и тд и тп нужно подтверждать комитом)
+
+
+        mNewFragment  = new FruitFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+        transaction.add(R.id.fragmentContainier, mNewFragment);
+        transaction.commit();
+
+
+
     }
 
     public void actionMilk() {
@@ -93,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void actionRef() {
         actionSwitch(R.layout.refrigerators_layout);
     }
-
 
     private void fillProductDitales(IProduct mCurrentProduct) {
         Resources res = getResources();
@@ -160,8 +182,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fillProductDitales(mCurrentProduct);
     }
 
-
-
     public void actionGranat() {
         Log.e("ADD----------------", "Granat test");
         actionSwitch(R.layout.add_fruits_layout);
@@ -171,7 +191,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fillProductDitales(mCurrentProduct);
     }
 
-
     public void actionGrape() {
             Log.e("ADD----------------", "Grape test");
             actionSwitch(R.layout.add_fruits_layout);
@@ -180,7 +199,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             fillProductDitales(mCurrentProduct);
         }
-
 
     public void initStore() {
 

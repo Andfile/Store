@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.stam.store.view.Fragments.FruitFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TableLayout
+        android:id="@+id/scrollFruit"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark">
+
+
+        <ImageButton
+            android:id="@+id/apple_img"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:onClick="onClick"
+            android:src="@drawable/apple_image_80"
+            />
+
+
+        <ImageButton
+            android:id="@+id/banana_img"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/banana_80"
+            android:onClick="onClick"
+            />
+
+        <ImageButton
+            android:id="@+id/woterm_img"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/woterm"
+            android:onClick="onClick"
+            />
+
+        <ImageButton
+            android:id="@+id/grusha_img"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/grusha_80"
+            android:onClick="onClick"
+            />
+
+        <ImageButton
+            android:id="@+id/granat_img"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/pomegranate_85"
+            android:onClick="onClick"
+            />
+
+        <ImageButton
+            android:id="@+id/grape_img"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/grape_80"
+            android:onClick="onClick"
+            />
+
+    </TableLayout>
+</FrameLayout>
