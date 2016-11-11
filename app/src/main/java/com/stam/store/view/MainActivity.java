@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     public void actionAddToCart() {
 
         cart.add(mCurrentProduct);
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-
 
     public void actionSwitch(int newLayoutId) {
         container.removeAllViews();
