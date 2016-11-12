@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.stam.store.R;
 import com.stam.store.model.Fruit;
 import com.stam.store.model.interfaces.IProduct;
+import com.stam.store.view.Fragments.AddToCartFragment;
 import com.stam.store.view.Fragments.FruitFragment;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout shopList;
     IProduct mCurrentProduct;
     Fragment mNewFragment ;
+
 
     FragmentManager fragmentManager = getFragmentManager();
 
@@ -95,12 +97,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //для того чтоб вызвать фрагмент нам нужно использовать фрагмнет транзикуию
         //каждое изменение фрагмента(ремув,адд и тд и тп нужно подтверждать комитом)
+        // важно понимать что транзакция это типо порядок действий которые обязательно
+        //должны произойти, если во время транзакции какое то действие проваливается то вся транзакция не исполняется
 
 
         mNewFragment  = new FruitFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
-        transaction.add(R.id.fragmentContainier, mNewFragment);
+        transaction.replace(R.id.container, mNewFragment);
+        transaction.addToBackStack(null);
         transaction.commit();
 
 
@@ -115,42 +120,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         actionSwitch(R.layout.refrigerators_layout);
     }
 
-    private void fillProductDitales(IProduct mCurrentProduct) {
-        Resources res = getResources();
-        switch (mCurrentProduct.getName()) {
 
-            case "Apple":
-                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.apple_image_80));
-                break;
-            case "WaterMelon":
-                    ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.woterm));
-                break;
-            case "Banana" :
-                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.banana_80));
-                break;
-            case "Grusha":
-                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.grusha_80));
-                break;
-            case "Granat" :
-                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.pomegranate_85));
-                break;
-            case "Grape":
-                ((ImageView) findViewById(R.id.productImage)).setImageDrawable(res.getDrawable(R.drawable.grape_80));
-                break;
-        }
-
-        ((TextView) findViewById(R.id.textViewPrice)).setText(Double.toString(mCurrentProduct.getPrice()));
-        ((TextView) findViewById(R.id.textViewCountry)).setText(mCurrentProduct.getCountry());
-        ((TextView) findViewById(R.id.textViewName)).setText(mCurrentProduct.getName());
-    }
 
     public void actionBanana() {
-        Log.e("ADD----------------", "Banana test");
-        actionSwitch(R.layout.add_fruits_layout);
+       /* Log.e("ADD----------------", "Banana test");
+        actionSwitch(R.layout.add_fruits_layout);*/
 
         mCurrentProduct = (Fruit) dict.get("Banana");
 
-        fillProductDitales(mCurrentProduct);
+        mNewFragment  = new AddToCartFragment(mCurrentProduct);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, mNewFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+        //fillProductDitales(mCurrentProduct);
     }
 
     public void actionWaterMelon() {
@@ -159,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mCurrentProduct = (Fruit) dict.get("WaterMelon");
 
-        fillProductDitales(mCurrentProduct);
+     //   fillProductDitales(mCurrentProduct);
     }
 
     public void actionApple() {
@@ -168,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mCurrentProduct = (Fruit) dict.get("Apple");
 
-        fillProductDitales(mCurrentProduct);
+      //  fillProductDitales(mCurrentProduct);
     }
 
     public void actionGrusha() {
@@ -177,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mCurrentProduct = (Fruit) dict.get("Grusha");
 
-        fillProductDitales(mCurrentProduct);
+      //  fillProductDitales(mCurrentProduct);
     }
 
     public void actionGranat() {
@@ -186,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mCurrentProduct = (Fruit) dict.get("Granat");
 
-        fillProductDitales(mCurrentProduct);
+       // fillProductDitales(mCurrentProduct);
     }
 
     public void actionGrape() {
@@ -195,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             mCurrentProduct = (Fruit) dict.get("Grape");
 
-            fillProductDitales(mCurrentProduct);
+            //fillProductDitales(mCurrentProduct);
         }
 
     public void initStore() {
