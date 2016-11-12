@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     FragmentManager fragmentManager = getFragmentManager();
-
+//todo продумать реализацию сохранения данных при смене орентации экран
+// todo попытаться реализовать и как можно больше оптимизировать процесс
 
 
     @Override
